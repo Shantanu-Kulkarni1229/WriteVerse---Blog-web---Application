@@ -42,7 +42,7 @@ const Sidebar = () => {
 					<img
 						src='./posts/cw.png'
 						alt='My Logo'
-						className='w-24 h-24 object-contain rounded-full border-2 border-white shadow-lg hover:bg-stone-900'
+						className='w-16 h-16 object-contain hover:scale-110 transition-transform ease-in-out duration-300'
 					/>
 
 
