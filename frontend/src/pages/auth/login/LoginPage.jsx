@@ -57,12 +57,13 @@ const LoginPage = () => {
 
 	return (
 		<div className='max-w-screen-xl mx-auto flex h-screen'>
-			<div className='flex-1 hidden lg:flex items-center  justify-center'>
-			<img src='./posts/cw.png' alt='My Logo' className='lg:w-2/3' />
+			<div className='flex-1 hidden lg:flex items-center justify-center'>
+				<img src='./posts/cw.png' alt='My Logo' className='w-64 h-64 lg:w-3/4 lg:h-3/4 object-contain' />
 			</div>
+
 			<div className='flex-1 flex flex-col justify-center items-center'>
 				<form className='flex gap-4 flex-col' onSubmit={handleSubmit}>
-				{/* <img src='./posts/cw.png' alt='My Logo' className='lg:w-2/3' /> */}
+					{/* <img src='./posts/cw.png' alt='My Logo' className='lg:w-2/3' /> */}
 
 					<h1 className='text-4xl font-extrabold text-white'>{"Let's Go"}</h1>
 					<label className='input input-bordered rounded flex items-center gap-2'>
