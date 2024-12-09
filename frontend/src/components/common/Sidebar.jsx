@@ -1,5 +1,4 @@
 import XSvg from "../svgs/X";
-
 import { MdHomeFilled } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
@@ -17,10 +16,7 @@ const Sidebar = () => {
 					method: "POST",
 				});
 				const data = await res.json();
-
-				if (!res.ok) {
-					throw new Error(data.error || "Something went wrong");
-				}
+				if (!res.ok) throw new Error(data.error || "Something went wrong");
 			} catch (error) {
 				throw new Error(error);
 			}
@@ -32,25 +28,26 @@ const Sidebar = () => {
 			toast.error("Logout failed");
 		},
 	});
+
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
 
 	return (
-		<div className='md:flex-[2_2_0] w-18 max-w-52'>
-			<div className='sticky top-0 left-0 h-screen flex flex-col border-r border-gray-700 w-20 md:w-full'>
+		<div className='md:flex-[2_2_0] w-16 md:w-20 max-w-52'>
+			<div className='sticky top-0 left-0 h-screen flex flex-col border-r border-gray-700 w-16 md:w-full'>
+
+				{/* Logo and Text */}
 				<Link to='/' className='flex items-center justify-center md:justify-start'>
-					{/* <XSvg className='px-2 w-12 h-12 rounded-full fill-white hover:bg-stone-900' /> */}
 					<img
 						src='./posts/cw.png'
 						alt='My Logo'
-						className='w-16 h-16 object-contain hover:scale-110 transition-transform ease-in-out duration-300'
+						className='w-12 h-12 md:w-16 md:h-16 object-contain hover:scale-110 transition-transform ease-in-out duration-300'
 					/>
-
-
-					<span className='ml-2 text-xl font-semibold text-white hover:text-gray-300'>
+					<span className='ml-2 text-xl font-semibold text-white hover:text-gray-300 hidden md:block'>
 						Write Verse
 					</span>
 				</Link>
 
+				{/* Navigation Links */}
 				<ul className='flex flex-col gap-3 mt-4'>
 					<li className='flex justify-center md:justify-start'>
 						<Link
@@ -58,8 +55,7 @@ const Sidebar = () => {
 							className='flex gap-3 items-center hover:bg-stone-900 transition-all rounded-full duration-300 py-2 pl-2 pr-4 max-w-fit cursor-pointer'
 						>
 							<MdHomeFilled className='w-8 h-8' />
-							<span className='text-lg hidden md:block'>The Hub
-							</span>
+							<span className='text-lg hidden md:block'>The Hub</span>
 						</Link>
 					</li>
 					<li className='flex justify-center md:justify-start'>
@@ -71,7 +67,6 @@ const Sidebar = () => {
 							<span className='text-lg hidden md:block'>Activity Feed</span>
 						</Link>
 					</li>
-
 					<li className='flex justify-center md:justify-start'>
 						<Link
 							to={`/profile/${authUser?.username}`}
@@ -82,6 +77,8 @@ const Sidebar = () => {
 						</Link>
 					</li>
 				</ul>
+
+				{/* Profile and Logout */}
 				{authUser && (
 					<Link
 						to={`/profile/${authUser.username}`}
@@ -94,8 +91,12 @@ const Sidebar = () => {
 						</div>
 						<div className='flex justify-between flex-1'>
 							<div className='hidden md:block'>
-								<p className='text-white font-bold text-sm w-20 truncate'>{authUser?.fullName}</p>
-								<p className='text-slate-500 text-sm'>@{authUser?.username}</p>
+								<p className='text-white font-bold text-sm w-20 truncate'>
+									{authUser?.fullName}
+								</p>
+								<p className='text-slate-500 text-sm'>
+									@{authUser?.username}
+								</p>
 							</div>
 							<BiLogOut
 								className='w-5 h-5 cursor-pointer'
@@ -111,4 +112,5 @@ const Sidebar = () => {
 		</div>
 	);
 };
+
 export default Sidebar;
