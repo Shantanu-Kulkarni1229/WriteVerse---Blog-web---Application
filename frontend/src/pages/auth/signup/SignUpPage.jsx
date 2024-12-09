@@ -132,7 +132,7 @@ const SignUpPage = () => {
 				</div>
 				<div className="mt-8 text-center">
 					<p className="text-sm text-gray-400 font-medium">
-						Developed by{" "}
+						Developed by{"http://github.com/Shantanu-Kulkarni1229"}
 						<span className="text-white font-bold hover:underline">
 							Shantanu Kulkarni
 						</span>
