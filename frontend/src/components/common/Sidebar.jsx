@@ -39,7 +39,7 @@ const Sidebar = () => {
 			<div className='sticky top-0 left-0 h-screen flex flex-col border-r border-gray-700 w-20 md:w-full'>
 				<Link to='/' className='flex items-center justify-center md:justify-start'>
 					{/* <XSvg className='px-2 w-12 h-12 rounded-full fill-white hover:bg-stone-900' /> */}
-					<img src='./posts/cw1.png' alt='My Logo' className='px-2 w-12 h-12 rounded-full fill-white hover:bg-stone-900' />
+					<img src='./posts/cw.png' alt='My Logo' className='px-2 w-12 h-12 rounded-full fill-white hover:bg-stone-900' />
 
 					<span className='ml-2 text-xl font-semibold text-white hover:text-gray-300'>
 						Write Verse
