@@ -132,9 +132,9 @@ const SignUpPage = () => {
 				</div>
 				<div className="mt-8 text-center">
 					<p className="text-sm text-gray-400 font-medium">
-						Developed by{"http://github.com/Shantanu-Kulkarni1229"}
+						Developed by{" "}
 						<span className="text-white font-bold hover:underline">
-							Shantanu Kulkarni
+							<a href="https://github.com/Shantanu-Kulkarni1229">Shantanu Kulkarni</a>
 						</span>
 					</p>
 				</div>
